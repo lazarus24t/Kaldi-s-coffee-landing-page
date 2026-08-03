@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Referenced by inline `animation:` styles in Steam.tsx — Tailwind only
+   emits keyframes tied to used `animate-*` utilities, so define here. */
+@keyframes steam {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-130px) translateX(12px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-cream text-espresso-900 font-sans;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-gold-500 text-espresso-950;
+  }
+
+  /* Elegant thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-cream;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-espresso-300 rounded-full border-2 border-cream;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-espresso-500;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Amharic mode (default): render text with the Ethiopic typeface so
+     Fidel glyphs look intentional rather than falling back to a system
+     font. Latin letters in this mode inherit the serif Ethiopic face. */
+  html[lang='am'] body {
+    @apply font-ethiopic;
+  }
+  html[lang='am'] h1,
+  html[lang='am'] h2,
+  html[lang='am'] h3,
+  html[lang='am'] h4 {
+    font-family: 'Noto Serif Ethiopic', 'Playfair Display', Georgia, serif;
+  }
+  html[lang='am'] .font-display {
+    font-family: 'Noto Serif Ethiopic', 'Playfair Display', Georgia, serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.gold.500');
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Frosted glass card */
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/15;
+  }
+
+  .glass-deep {
+    @apply bg-espresso-950/60 backdrop-blur-2xl border border-white/10;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #e6cd77 0%, #c9a227 45%, #f6ebc9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Film-grain overlay for editorial sections */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hand-drawn style underline for nav links */
+  .nav-link {
+    @apply relative text-sm font-medium tracking-wide text-white/80 transition-colors duration-300 hover:text-white;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-[2px] w-0 rounded-full bg-gold-400 transition-all duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  .nav-link.active {
+    @apply text-white;
+  }
+
+  /* Leaflet z-index confinement */
+  .leaflet-container {
+    @apply z-0;
+    font-family: inherit;
+  }
+  .leaflet-popup-content-wrapper {
+    @apply rounded-2xl shadow-soft;
+  }
+  .leaflet-popup-content {
+    @apply m-3 text-sm;
+  }
+}
+
+@layer utilities {
+  .animate-pause {
+    animation-play-state: paused;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
