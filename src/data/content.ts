@@ -281,13 +281,6 @@ export const FAQS: Faq[] = [
       "Yes — with every new branch, Kaldi's provides private school education for an outstanding grade-8 student from an underprivileged family.",
     ),
   },
-  {
-    q: L('ኦፊሴላዊ ድረ-ገጻችሁ ምንድነው?', 'What is your official website?'),
-    a: L(
-      'በkaldiscoffeeethiopia.com ወይም በአማራጭ ዶሜናችን kaldiscoffeeet.com ይጎብኙን።',
-      'Visit us at kaldiscoffeeethiopia.com or our alternate domain kaldiscoffeeet.com.',
-    ),
-  },
 ];
 
 // ── Stats used on the homepage (verified) ──────────────────────────

@@ -55,6 +55,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'coffee',
     image: IMG.cupSteam,
     notes: [L('ባህላዊ', 'Traditional'), L('ትኩስ የተጠላ', 'Freshly brewed')],
+    featured: true,
   },
   {
     id: 'yirgacheffe-coffee',
@@ -66,6 +67,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'coffee',
     image: IMG.heroPour,
     notes: [L('ነጠላ መነሻ', 'Single origin')],
+    featured: true,
   },
 
   // ── Food & Pastries ──────────────────────────────────────────────
@@ -91,6 +93,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'food',
     image: IMG.blackForest,
     notes: [L('ክላሲክ', 'Classic')],
+    featured: true,
   },
   {
     id: 'burgers',
@@ -102,6 +105,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'food',
     image: IMG.burger,
     notes: [L('ጠጣር', 'Hearty')],
+    featured: true,
   },
   {
     id: 'sandwiches',
@@ -113,6 +117,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'food',
     image: IMG.sandwich,
     notes: [L('በትዕዛዝ የሚዘጋጅ', 'Made to order')],
+    featured: true,
   },
   {
     id: 'pastries-snacks',
@@ -124,6 +129,7 @@ export const MENU_ITEMS: MenuItem[] = [
     category: 'food',
     image: IMG.croissant,
     notes: [L('ትኩስ የተጋገረ', 'Baked fresh')],
+    featured: true,
   },
 
   // ── Retail ────────────────────────────────────────────────────────

@@ -94,7 +94,7 @@ export default function BlogPostPage() {
               </p>
               <div className="mt-5">
                 <Button to="/menu" variant="dark">
-                  {t(L('አሁን ያዙዙ', 'Order Now'))}
+                  {t(L('አሁን ይዘዙ', 'Order Now'))}
                 </Button>
               </div>
             </div>

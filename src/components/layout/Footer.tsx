@@ -44,7 +44,7 @@ export function Footer() {
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
               {t(
                 L(
-                  'ቡና የተወለደበት ቦታ። ከ2005 ጀምሮ የኢትዮጵያ የቡና ቤት ሰንሰለት — ቡናን በአፈ-ታሪክ ያገኘው እረኛ ካልዲ በስሙ የተሰየመ።',
+                  'ቡና የተወለደበት ቦታ። እ.ኤ.አ. ከ2005 ጀምሮ የኢትዮጵያ የቡና ቤት ሰንሰለት — ቡናን በአፈ-ታሪክ ያገኘው እረኛ ካልዲ በስሙ የተሰየመ።',
                   "Where Coffee Was Born. Ethiopia's homegrown coffee house chain since 2005 — named after the goatherd Kaldi, who legend says discovered coffee.",
                 ),
               )}
@@ -102,7 +102,7 @@ export function Footer() {
           {/* Newsletter */}
           <div>
             <h3 className="font-accent text-xs font-semibold uppercase tracking-widest2 text-gold-400">
-              {t(L('ከቡና ማጠብያ ቤት ትኩስ ዜና', 'Fresh from the Roastery'))}
+              {t(L('ከቡና መቆያ ቤት ትኩስ ዜና', 'Fresh from the Roastery'))}
             </h3>
             <p className="mt-5 text-sm text-white/60">
               {t(

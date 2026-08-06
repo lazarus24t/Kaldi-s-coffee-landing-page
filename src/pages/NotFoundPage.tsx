@@ -48,7 +48,7 @@ export default function NotFoundPage() {
             {t(L('ወደ መነሻ ይመለሱ', 'Back Home'))}
           </Button>
           <Button to="/menu" variant="glass" size="lg">
-            {t(L('ቡና ያዙዙ', 'Order Coffee'))}
+            {t(L('ቡና ይዘዙ', 'Order Coffee'))}
           </Button>
         </div>
       </section>

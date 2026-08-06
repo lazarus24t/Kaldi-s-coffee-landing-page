@@ -130,7 +130,7 @@ export function Navbar() {
             <button
               onClick={() => setOpen((v) => !v)}
               className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 text-white backdrop-blur-md transition hover:bg-white/15 lg:hidden"
-              aria-label={open ? t(L('ሜኑ ዝጋ', 'Close menu')) : t(L('ሜኑ ክፈት', 'Open menu'))}
+              aria-label={open ? t(L('ሜኑ መዝጊያ', 'Close menu')) : t(L('ሜኑ መክፈቻ', 'Open menu'))}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -177,7 +177,7 @@ export function Navbar() {
                 className="mt-8"
               >
                 <Button to="/menu" size="lg" className="w-full">
-                  {t(L('አሁን ያዙዙ', 'Order Now'))}
+                  {t(L('አሁን ይዘዙ', 'Order Now'))}
                 </Button>
               </motion.div>
             </div>

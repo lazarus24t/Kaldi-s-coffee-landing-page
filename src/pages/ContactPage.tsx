@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CheckCircle2, ChevronDown, Clock, Globe, MapPin, Phone } from 'lucide-react';
+import { CheckCircle2, ChevronDown, Clock, MapPin, Phone } from 'lucide-react';
 import { FAQS } from '@/data/content';
 import { useLang, L } from '@/lib/i18n';
 import { Seo } from '@/lib/seo';
@@ -15,8 +15,6 @@ const INFO: {
   title: ReturnType<typeof L>;
   lines: (string | ReturnType<typeof L>)[];
   href?: string;
-  hrefs?: string[];
-  newTab?: boolean;
 }[] = [
   {
     icon: MapPin,
@@ -28,13 +26,6 @@ const INFO: {
     title: L('ስልክ', 'Phone'),
     lines: ['+251 11 371 4258'],
     href: 'tel:+251113714258',
-  },
-  {
-    icon: Globe,
-    title: L('ድረ-ገጽ', 'Website'),
-    lines: ['kaldiscoffeeethiopia.com', 'kaldiscoffeeet.com'],
-    hrefs: ['https://kaldiscoffeeethiopia.com', 'https://kaldiscoffeeet.com'],
-    newTab: true,
   },
   {
     icon: Clock,
@@ -110,16 +101,7 @@ export default function ContactPage() {
                   {t(info.title)}
                 </h2>
                 {info.lines.map((line, li) =>
-                  info.hrefs ? (
-                    <a
-                      key={li}
-                      href={info.hrefs[li]}
-                      {...(info.newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
-                      className="mt-1.5 block text-sm text-espresso-700/80 transition-colors hover:text-gold-600"
-                    >
-                      {t(line)}
-                    </a>
-                  ) : info.href ? (
+                  info.href ? (
                     <a
                       key={li}
                       href={info.href}

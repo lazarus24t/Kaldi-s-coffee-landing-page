@@ -119,7 +119,7 @@ export function Hero() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
           </span>
           <span className="font-accent text-[11px] font-semibold uppercase tracking-widest2 text-white/90">
-            {t(L('የኢትዮጵያ የቡና ቤት ሰንሰለት · ከ2005 ጀምሮ', "Ethiopia's Coffee House Chain · Since 2005"))}
+            {t(L('የኢትዮጵያ የቡና ቤት ሰንሰለት · እ.ኤ.አ. ከ2005 ጀምሮ', "Ethiopia's Coffee House Chain · Since 2005"))}
           </span>
         </motion.div>
 
@@ -154,7 +154,7 @@ export function Hero() {
           className="mt-9 flex flex-wrap items-center gap-4"
         >
           <Button to="/menu" size="lg">
-            {t(L('አሁን ያዙዙ', 'Order Now'))}
+            {t(L('አሁን ይዘዙ', 'Order Now'))}
           </Button>
           <Button to="/locations" variant="outline" size="lg">
             <MapPin className="h-4 w-4" /> {t(L('ቅርንጫፍ ያግኙ', 'Find a Location'))}
